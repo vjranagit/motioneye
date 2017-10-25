@@ -6,6 +6,8 @@ Run it
 ------
     docker run -p 8765:8765 -v /path/to/config:/etc/motioneye -v /path/to/data:/var/lib/motioneye tyzbit/motion
 
-If you mount a config volume with a `motioneye.conf` file inside, it will override the defaults.
+If you mount a config volume with a `motioneye.conf` file inside, it will override the defaults, as seen above.
 
-If you want to save videos, mount a data directory.
+If you want to save videos, mount a data directory, as seen above.
+
+If you need a specific UID and/or GID, add `-e UID:1000 -e GID:100` to your `docker run` command
