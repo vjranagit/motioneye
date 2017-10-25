@@ -4,7 +4,13 @@ This is the popular `motioneye` Linux app, Dockerized and on [Alpine](https://al
 
 Run it
 ------
-    docker run -p 8765:8765 -v /path/to/config:/etc/motioneye -v /path/to/data:/var/lib/motioneye tyzbit/motion
+    docker run -p 8765:8765 \
+    -v /path/to/config:/etc/motioneye \
+    -v /path/to/data:/var/lib/motioneye \
+    -e UID=1000 \
+    -e GID=100 \
+    -e TZ="America/New York" \
+    tyzbit/motion
 
 If you mount a config volume with a `motioneye.conf` file inside, it will override the defaults, as seen above.
 

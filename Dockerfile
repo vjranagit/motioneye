@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.6
 
 ENV version=0.37.1
 ENV UID=1000
@@ -7,10 +7,7 @@ ENV GID=100
 VOLUME ["/etc/motioneye", "/var/lib/motioneye"]
 COPY entrypoint.sh /entrypoint.sh
 
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories\
-&&  apk --no-cache add\
-    bash\
-    motion\
+RUN apk --no-cache add\
     py2-pip\
     python\
     curl\
@@ -24,6 +21,8 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
     zlib-dev\
 &&  pip install motioneye==$version\
 &&  apk del buildreq\
+&&  echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories\
+&&  apk --no-cache add motion\
 &&  chmod +x /entrypoint.sh
 
 CMD /entrypoint.sh /usr/bin/meyectl startserver -c /etc/motioneye/motioneye.conf
