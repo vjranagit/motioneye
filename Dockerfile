@@ -8,6 +8,7 @@ VOLUME ["/etc/motioneye", "/var/lib/motioneye"]
 COPY entrypoint.sh /entrypoint.sh
 
 RUN apk --no-cache add\
+    bash\
     py2-pip\
     python\
     curl\
