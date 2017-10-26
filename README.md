@@ -2,6 +2,11 @@
 
 This is the popular `motioneye` Linux app, Dockerized and on [Alpine](https://alpinelinux.org/about/).
 
+Tags
+----
+`latest` - This is based off of Alpine Edge, and has Python 2.7.15.  MotionEye is incompatible with this version of Python, but once it's updated this image will be updated as well. [(Dockerfile)](https://github.com/tyzbit/motioneye/blob/master/Dockerfile)
+`3.6` - This is based off of Alpine 3.6, and has Python 2.7.14. [(Dockerfile)](https://github.com/tyzbit/motioneye/blob/3.6/Dockerfile)
+
 Run it
 ------
     docker run -p 8765:8765 \
@@ -9,7 +14,7 @@ Run it
     -v /path/to/data:/var/lib/motioneye \
     -e UID=1000 \
     -e GID=100 \
-    -e TZ="America/New York" \
+    -e TZ="America/New_York" \
     tyzbit/motion
 
 If you mount a config volume with a `motioneye.conf` file inside, it will override the defaults, as seen above.
