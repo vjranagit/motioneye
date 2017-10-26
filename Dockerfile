@@ -15,6 +15,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
     python\
     curl\
     openssl\
+    tzdata\
 &&  apk --no-cache add --virtual=buildreq\
     build-base\
     curl-dev\

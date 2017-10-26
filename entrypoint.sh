@@ -8,6 +8,10 @@ has_gid () {
     cut -d: -f1,4 /etc/passwd | grep -q "^${1}:${2}" || return 1
 }
 
+if [ "$TZ" ]; then
+  cp /usr/share/zoneinfo/${TZ} /etc/localtime
+fi
+
 # example: ensure_user btsync 1000 1000
 ensure_user () {
     local user=$1
