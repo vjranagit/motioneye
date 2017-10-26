@@ -13,6 +13,7 @@ RUN apk --no-cache add\
     python\
     curl\
     openssl\
+    tzdata\
 &&  apk --no-cache add --virtual=buildreq\
     build-base\
     curl-dev\
