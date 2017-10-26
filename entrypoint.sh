@@ -3,14 +3,14 @@
 test -e /etc/motioneye/motioneye.conf\
 ||  cp /usr/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf\
 
+if [ "$TZ" ]; then
+  cp /usr/share/zoneinfo/${TZ} /etc/localtime
+fi
+
 # https://gist.github.com/qizhihere/c8db099c673e2f4718418ca05c9b2767
 has_gid () {
     cut -d: -f1,4 /etc/passwd | grep -q "^${1}:${2}" || return 1
 }
-
-if [ "$TZ" ]; then
-  cp /usr/share/zoneinfo/${TZ} /etc/localtime
-fi
 
 # example: ensure_user btsync 1000 1000
 ensure_user () {
