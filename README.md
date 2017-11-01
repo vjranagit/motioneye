@@ -4,8 +4,8 @@ This is the popular `motioneye` Linux app, Dockerized and on [Alpine](https://al
 
 Tags
 ----
-`latest` - This is based off of Alpine Edge, and has Python 2.7.15.  MotionEye is incompatible with this version of Python, but once it's updated this image will be updated as well. [(Dockerfile)](https://github.com/tyzbit/motioneye/blob/master/Dockerfile)
-`3.6` - This is based off of Alpine 3.6, and has Python 2.7.14. [(Dockerfile)](https://github.com/tyzbit/motioneye/blob/3.6/Dockerfile)
+`latest`, `3.6` - This is based off of Alpine 3.6, and has Python 2.7.14. [(Dockerfile)](https://github.com/tyzbit/motioneye/blob/3.6/Dockerfile)
+`edge` - This is based off of Alpine Edge, and has Python 2.7.15.  MotionEye is incompatible with this version of Python, but once it's updated this image will be updated as well. [(Dockerfile)](https://github.com/tyzbit/motioneye/blob/master/Dockerfile)
 
 Run it
 ------
