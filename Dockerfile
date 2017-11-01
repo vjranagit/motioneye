@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-ENV version=0.37.1
+ENV version=0.38
 ENV UID=1000
 ENV GID=100
 
