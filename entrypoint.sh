@@ -37,4 +37,8 @@ ensure_user motioneye $UID $GID
 
 ln -s /dev/stdout /var/log/motion.log
 
+chmod 777 /run/
+chmod 777 /var/log/
+chmod 777 /var/lib/motioneye/
+
 exec su motioneye -c "exec $*"
