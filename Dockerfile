@@ -8,6 +8,7 @@ ENV GID=100
 VOLUME ["/etc/motioneye", "/var/lib/motioneye"]
 COPY entrypoint.sh /entrypoint.sh
 
+WORKDIR /
 RUN apk --no-cache add\
     bash\
     ffmpeg-dev\
