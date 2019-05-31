@@ -29,8 +29,7 @@ RUN apk --no-cache add\
     openssl-dev\
     python-dev\
     zlib-dev\
-&&  git clone https://github.com/Motion-Project/motion.git && cd motion\
-&&  git checkout tags/$motion_tag\
+&&  git clone --branch $motioneye_version https://github.com/Motion-Project/motion.git && cd motion\
 &&  autoreconf -fiv\
 &&  ./configure\
 &&  make\
