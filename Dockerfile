@@ -1,6 +1,6 @@
 FROM alpine:3.7
 
-ENV motioneye_version=0.39.3
+ENV motioneye_version=0.40
 ENV motion_tag=release-4.2
 ENV UID=1000
 ENV GID=100
