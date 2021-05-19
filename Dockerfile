@@ -11,8 +11,9 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
 &&  apk --no-cache add\
     bash\
     motion\
-    py2-pip\
-    python\
+    py-pip\
+    python3\
+    python2\
     curl\
     openssl\
     tzdata\
@@ -21,7 +22,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
     curl-dev\
     jpeg-dev\
     openssl-dev\
-    python-dev\
+    python3-dev\
     zlib-dev\
 &&  pip install motioneye==$version\
 &&  apk del buildreq\
